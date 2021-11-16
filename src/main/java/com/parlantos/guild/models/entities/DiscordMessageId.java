@@ -6,21 +6,34 @@ import java.util.Objects;
 
 public class DiscordMessageId implements Serializable {
 
-  private BigInteger messageId;
+  private MessageEntity messageEntity;
 
   private BigInteger discordMessageId;
 
-  public DiscordMessageId(BigInteger messageId, BigInteger discordMessageId) {
-    this.messageId = messageId;
+  public void setMessageId(MessageEntity messageId) {
+    this.messageEntity = messageId;
+  }
+
+  public DiscordMessageId(MessageEntity messageId, BigInteger discordMessageId) {
+    this.messageEntity = messageId;
     this.discordMessageId = discordMessageId;
   }
 
-  public BigInteger getMessageId() {
-    return messageId;
+  public MessageEntity getMessageId() {
+    return messageEntity;
   }
 
-  public void setMessageId(BigInteger messageId) {
-    this.messageId = messageId;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    DiscordMessageId that = (DiscordMessageId) o;
+    return Objects.equals(messageEntity, that.messageEntity) && Objects.equals(discordMessageId, that.discordMessageId);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(messageEntity, discordMessageId);
   }
 
   public BigInteger getDiscordMessageId() {
@@ -31,16 +44,4 @@ public class DiscordMessageId implements Serializable {
     this.discordMessageId = discordMessageId;
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    DiscordMessageId that = (DiscordMessageId) o;
-    return messageId.equals(that.messageId) && discordMessageId.equals(that.discordMessageId);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(messageId, discordMessageId);
-  }
 }
