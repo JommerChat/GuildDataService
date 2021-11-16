@@ -14,7 +14,7 @@ public class SnowflakeDto {
 
   private final Logger logger = LoggerFactory.getLogger(SnowflakeDto.class);
 
-  @Value("${snowflake.baseUrl:localhost:8080/snowflake}")
+  @Value("${snowflake_base_url:http://192.168.1.49:8080/snowflake}")
   private String snowflakeUrl;
 
   private final WebClient webClient = WebClient.create();
