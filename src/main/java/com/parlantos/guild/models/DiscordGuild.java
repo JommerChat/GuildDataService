@@ -1,9 +1,405 @@
 package com.parlantos.guild.models;
 
-import java.math.BigInteger;
-import java.time.LocalDateTime;
-
 public class DiscordGuild {
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getIcon() {
+    return icon;
+  }
+
+  public void setIcon(String icon) {
+    this.icon = icon;
+  }
+
+  public String[] getFeatures() {
+    return features;
+  }
+
+  public void setFeatures(String[] features) {
+    this.features = features;
+  }
+
+  public String[] getCommands() {
+    return commands;
+  }
+
+  public void setCommands(String[] commands) {
+    this.commands = commands;
+  }
+
+  public String[] getMembers() {
+    return members;
+  }
+
+  public void setMembers(String[] members) {
+    this.members = members;
+  }
+
+  public String[] getChannels() {
+    return channels;
+  }
+
+  public void setChannels(String[] channels) {
+    this.channels = channels;
+  }
+
+  public String[] getBans() {
+    return bans;
+  }
+
+  public void setBans(String[] bans) {
+    this.bans = bans;
+  }
+
+  public String[] getRoles() {
+    return roles;
+  }
+
+  public void setRoles(String[] roles) {
+    this.roles = roles;
+  }
+
+  public String[] getStageInstances() {
+    return stageInstances;
+  }
+
+  public void setStageInstances(String[] stageInstances) {
+    this.stageInstances = stageInstances;
+  }
+
+  public String[] getInvites() {
+    return invites;
+  }
+
+  public void setInvites(String[] invites) {
+    this.invites = invites;
+  }
+
+  public boolean isDeleted() {
+    return deleted;
+  }
+
+  public void setDeleted(boolean deleted) {
+    this.deleted = deleted;
+  }
+
+  public int getShardId() {
+    return shardId;
+  }
+
+  public void setShardId(int shardId) {
+    this.shardId = shardId;
+  }
+
+  public String getSplash() {
+    return splash;
+  }
+
+  public void setSplash(String splash) {
+    this.splash = splash;
+  }
+
+  public String getBanner() {
+    return banner;
+  }
+
+  public void setBanner(String banner) {
+    this.banner = banner;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public String getVerificationLevel() {
+    return verificationLevel;
+  }
+
+  public void setVerificationLevel(String verificationLevel) {
+    this.verificationLevel = verificationLevel;
+  }
+
+  public String getVanityURLCode() {
+    return vanityURLCode;
+  }
+
+  public void setVanityURLCode(String vanityURLCode) {
+    this.vanityURLCode = vanityURLCode;
+  }
+
+  public String getNsfwLevel() {
+    return nsfwLevel;
+  }
+
+  public void setNsfwLevel(String nsfwLevel) {
+    this.nsfwLevel = nsfwLevel;
+  }
+
+  public String getDiscoverySplash() {
+    return discoverySplash;
+  }
+
+  public void setDiscoverySplash(String discoverySplash) {
+    this.discoverySplash = discoverySplash;
+  }
+
+  public int getMemberCount() {
+    return memberCount;
+  }
+
+  public void setMemberCount(int memberCount) {
+    this.memberCount = memberCount;
+  }
+
+  public boolean isLarge() {
+    return large;
+  }
+
+  public void setLarge(boolean large) {
+    this.large = large;
+  }
+
+  public String getApplicationId() {
+    return applicationId;
+  }
+
+  public void setApplicationId(String applicationId) {
+    this.applicationId = applicationId;
+  }
+
+  public int getAfkTimeout() {
+    return afkTimeout;
+  }
+
+  public void setAfkTimeout(int afkTimeout) {
+    this.afkTimeout = afkTimeout;
+  }
+
+  public String getAfkChannelId() {
+    return afkChannelId;
+  }
+
+  public void setAfkChannelId(String afkChannelId) {
+    this.afkChannelId = afkChannelId;
+  }
+
+  public String getSystemChannelId() {
+    return systemChannelId;
+  }
+
+  public void setSystemChannelId(String systemChannelId) {
+    this.systemChannelId = systemChannelId;
+  }
+
+  public String getPremiumTier() {
+    return premiumTier;
+  }
+
+  public void setPremiumTier(String premiumTier) {
+    this.premiumTier = premiumTier;
+  }
+
+  public int getPremiumSubscriptionCount() {
+    return premiumSubscriptionCount;
+  }
+
+  public void setPremiumSubscriptionCount(int premiumSubscriptionCount) {
+    this.premiumSubscriptionCount = premiumSubscriptionCount;
+  }
+
+  public String getExplicitContentFilter() {
+    return explicitContentFilter;
+  }
+
+  public void setExplicitContentFilter(String explicitContentFilter) {
+    this.explicitContentFilter = explicitContentFilter;
+  }
+
+  public String getMfaLevel() {
+    return mfaLevel;
+  }
+
+  public void setMfaLevel(String mfaLevel) {
+    this.mfaLevel = mfaLevel;
+  }
+
+  public String getJoinedTimestamp() {
+    return joinedTimestamp;
+  }
+
+  public void setJoinedTimestamp(String joinedTimestamp) {
+    this.joinedTimestamp = joinedTimestamp;
+  }
+
+  public String getCreatedTimestamp() {
+    return createdTimestamp;
+  }
+
+  public void setCreatedTimestamp(String createdTimestamp) {
+    this.createdTimestamp = createdTimestamp;
+  }
+
+  public String getDefaultMessageNotifications() {
+    return defaultMessageNotifications;
+  }
+
+  public void setDefaultMessageNotifications(String defaultMessageNotifications) {
+    this.defaultMessageNotifications = defaultMessageNotifications;
+  }
+
+  public int getSystemChannelFlags() {
+    return systemChannelFlags;
+  }
+
+  public void setSystemChannelFlags(int systemChannelFlags) {
+    this.systemChannelFlags = systemChannelFlags;
+  }
+
+  public int getMaximumMembers() {
+    return maximumMembers;
+  }
+
+  public void setMaximumMembers(int maximumMembers) {
+    this.maximumMembers = maximumMembers;
+  }
+
+  public String getMaximumPresences() {
+    return maximumPresences;
+  }
+
+  public void setMaximumPresences(String maximumPresences) {
+    this.maximumPresences = maximumPresences;
+  }
+
+  public int getApproximateMemberCount() {
+    return approximateMemberCount;
+  }
+
+  public void setApproximateMemberCount(int approximateMemberCount) {
+    this.approximateMemberCount = approximateMemberCount;
+  }
+
+  public int getApproximatePresenceCount() {
+    return approximatePresenceCount;
+  }
+
+  public void setApproximatePresenceCount(int approximatePresenceCount) {
+    this.approximatePresenceCount = approximatePresenceCount;
+  }
+
+  public int getVanityURLUses() {
+    return vanityURLUses;
+  }
+
+  public void setVanityURLUses(int vanityURLUses) {
+    this.vanityURLUses = vanityURLUses;
+  }
+
+  public String getRulesChannelId() {
+    return rulesChannelId;
+  }
+
+  public void setRulesChannelId(String rulesChannelId) {
+    this.rulesChannelId = rulesChannelId;
+  }
+
+  public String getPublicUpdatesChannelId() {
+    return publicUpdatesChannelId;
+  }
+
+  public void setPublicUpdatesChannelId(String publicUpdatesChannelId) {
+    this.publicUpdatesChannelId = publicUpdatesChannelId;
+  }
+
+  public String getPreferredLocale() {
+    return preferredLocale;
+  }
+
+  public void setPreferredLocale(String preferredLocale) {
+    this.preferredLocale = preferredLocale;
+  }
+
+  public String getOwnerId() {
+    return ownerId;
+  }
+
+  public void setOwnerId(String ownerId) {
+    this.ownerId = ownerId;
+  }
+
+  public String[] getEmojis() {
+    return emojis;
+  }
+
+  public void setEmojis(String[] emojis) {
+    this.emojis = emojis;
+  }
+
+  public String[] getStickers() {
+    return stickers;
+  }
+
+  public void setStickers(String[] stickers) {
+    this.stickers = stickers;
+  }
+
+  public String getNameAcronym() {
+    return nameAcronym;
+  }
+
+  public void setNameAcronym(String nameAcronym) {
+    this.nameAcronym = nameAcronym;
+  }
+
+  public String getIconURL() {
+    return iconURL;
+  }
+
+  public void setIconURL(String iconURL) {
+    this.iconURL = iconURL;
+  }
+
+  public String getSplashURL() {
+    return splashURL;
+  }
+
+  public void setSplashURL(String splashURL) {
+    this.splashURL = splashURL;
+  }
+
+  public String getDiscoverySplashURL() {
+    return discoverySplashURL;
+  }
+
+  public void setDiscoverySplashURL(String discoverySplashURL) {
+    this.discoverySplashURL = discoverySplashURL;
+  }
+
+  public String getBannerURL() {
+    return bannerURL;
+  }
+
+  public void setBannerURL(String bannerURL) {
+    this.bannerURL = bannerURL;
+  }
 
   private String id;
 
@@ -65,7 +461,7 @@ public class DiscordGuild {
 
   private String mfaLevel;
 
-  private LocalDateTime joinedTimestamp;
+  private String joinedTimestamp;
 
   private String defaultMessageNotifications;
 
@@ -85,73 +481,23 @@ public class DiscordGuild {
 
   private String publicUpdatesChannelId;
 
-    "vanityURLUses": null,
-    "rulesChannelId": null,
-    "publicUpdatesChannelId": null,
-    "preferredLocale": "en-US",
-    "ownerId": "304475016936816640",
-    "emojis": [
-    "548706087541407765",
-      "553737811942047787",
-      "553738210157789196",
-      "553738356522090507",
-      "584073673179398165",
-      "637879157564637224",
-      "637879421407330305",
-      "637880185365987348",
-      "670484514249768960",
-      "670484862674927645",
-      "681205592827887625",
-      "681205610397827167",
-      "681205618559811706",
-      "681205638721830989",
-      "681205735723761684",
-      "681205763519152204",
-      "681205904003170337",
-      "681205978422575146",
-      "681205989994922013",
-      "681206017513488449",
-      "681206054071435330",
-      "681206071209361604",
-      "681206122476339211",
-      "681206148556390440",
-      "681206163227803670",
-      "681206298435518697",
-      "681206322967871548",
-      "683871109204017333",
-      "694278010647478373",
-      "713587345319788576",
-      "714624680719548446",
-      "726640294702874684",
-      "726641576587165696",
-      "726641592303353877",
-      "726641607348060263",
-      "726641623328489563",
-      "733125825494384743",
-      "733675912960147497",
-      "736030301175939153",
-      "736031747808165979",
-      "736249240120197181",
-      "736249251817848872",
-      "736249280129400894",
-      "736249309443653784",
-      "736249363436666971",
-      "756563404054986768",
-      "770404743004291113",
-      "780487868745383968",
-      "847286335965495336",
-      "847580548732813379",
-      "888241284869939200",
-      "899095332821037067"
-  ],
-    "stickers": [
-    "860892262728335430"
-  ],
-    "createdTimestamp": 1539893710268,
-    "nameAcronym": "SP",
-    "iconURL": "https://cdn.discordapp.com/icons/502575389550575636/e2b96ae783915356ee833f0d502448a4.webp",
-    "splashURL": "https://cdn.discordapp.com/splashes/502575389550575636/06dc852df6ca2b78b4b3878191cc8cfa.webp",
-    "discoverySplashURL": null,
-    "bannerURL": null
-  }
+  private String preferredLocale;
+
+  private String ownerId;
+
+  private String[] emojis;
+
+  private String[] stickers;
+
+  private String createdTimestamp;
+
+  private String nameAcronym;
+
+  private String iconURL;
+
+  private String splashURL;
+
+  private String discoverySplashURL;
+
+  private String bannerURL;
 }
