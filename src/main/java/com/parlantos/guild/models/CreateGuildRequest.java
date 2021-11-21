@@ -8,6 +8,8 @@ public class CreateGuildRequest {
 
   private String image;
 
+  private Boolean publicFlag;
+
   public String getName() {
     return name;
   }
@@ -30,5 +32,13 @@ public class CreateGuildRequest {
 
   public void setImage(String image) {
     this.image = image;
+  }
+
+  public Boolean getPublicFlag() {
+    return this.publicFlag;
+  }
+
+  public void setPublicFlag(Boolean publicFlag) {
+    this.publicFlag = publicFlag;
   }
 }

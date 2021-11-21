@@ -27,6 +27,25 @@ public class GuildEntity {
   @Column(name = "discord_guild_id")
   private BigInteger discordGuildId;
 
+  public BigInteger getDiscordGuildId() {
+    return discordGuildId;
+  }
+
+  public void setDiscordGuildId(BigInteger discordGuildId) {
+    this.discordGuildId = discordGuildId;
+  }
+
+  public Boolean getPublicFlag() {
+    return publicFlag;
+  }
+
+  public void setPublicFlag(Boolean publicFlag) {
+    this.publicFlag = publicFlag;
+  }
+
+  @Column(name = "public")
+  private Boolean publicFlag;
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;

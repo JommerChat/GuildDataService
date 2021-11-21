@@ -46,6 +46,7 @@ public class GuildService {
     guildEntity.setName(createGuildRequest.getName());
     guildEntity.setImage(createGuildRequest.getImage());
     guildEntity.setId(snowflakeId);
+    guildEntity.setPublicFlag(createGuildRequest.getPublicFlag());
     return this.guildRepo.save(guildEntity);
   }
 
