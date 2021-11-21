@@ -119,4 +119,8 @@ public class GuildService {
       List<GuildMemberEntity> guildMemberEntity = this.guildMemberRepo.findAllByMemberEntity(memberEntity);
       return guildMemberEntity.stream().map(GuildMemberEntity::getGuildEntity).collect(Collectors.toList());
     }
+
+  public List<GuildEntity> getTopPublicGuilds(String limit) {
+    return this.guildRepo.findRecentMessagesWithLimit(new BigInteger(limit));
+  }
 }
