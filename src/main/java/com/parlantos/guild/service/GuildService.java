@@ -10,6 +10,7 @@ import javax.xml.bind.ValidationException;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class GuildService {
@@ -76,7 +77,6 @@ public class GuildService {
   public GuildMemberEntity addMemberToGuild(AddMemberRequest addMemberRequest) throws ValidationException {
     BigInteger snowflakeId = this.snowflakeDto.getSnowflakeId().block();
     GuildMemberEntity guildMemberEntity = new GuildMemberEntity();
-    guildMemberEntity.setId(snowflakeId);
     GuildEntity guildEntity = this.guildRepo.findById(addMemberRequest.getGuildId()).orElseThrow(() -> new ValidationException("The guild id does not exist"));
     MemberEntity memberEntity = this.memberRepo.findById(addMemberRequest.getMemberId()).orElseThrow(() -> new ValidationException("The member id does not exist"));
     guildMemberEntity.setGuildEntity(guildEntity);
@@ -112,4 +112,10 @@ public class GuildService {
     GuildEntity guildEntity = this.guildRepo.findById(new BigInteger(guildId)).orElseThrow(() -> new ValidationException("The guild id does not exist"));
     return this.voiceChannelRepo.findAllByGuildEntity(guildEntity);
   }
+
+    public List<GuildEntity> getGuildsForMember(String memberId) throws ValidationException {
+      MemberEntity memberEntity = this.memberRepo.findById(new BigInteger(memberId)).orElseThrow(() -> new ValidationException("The member id does not exist"));
+      List<GuildMemberEntity> guildMemberEntity = this.guildMemberRepo.findAllByMemberEntity(memberEntity);
+      return guildMemberEntity.stream().map(GuildMemberEntity::getGuildEntity).collect(Collectors.toList());
+    }
 }

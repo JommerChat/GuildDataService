@@ -64,6 +64,11 @@ public class GuildController {
     return new ResponseEntity<>(this.guildService.createGuild(createGuildRequest), HttpStatus.OK);
   }
 
+  @GetMapping("/guilds")
+  public ResponseEntity<List<GuildEntity>> getAllGuildsForAMember(@RequestParam String memberId) throws ValidationException {
+    return new ResponseEntity<>(this.guildService.getGuildsForMember(memberId), HttpStatus.OK);
+  }
+
   @PostMapping("/createMessage")
   public ResponseEntity<MessageEntity> createMessage(@RequestBody CreateMessageRequest createMessageRequest) throws ValidationException {
     return new ResponseEntity<>(this.guildService.createMessage(createMessageRequest), HttpStatus.OK);
