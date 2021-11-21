@@ -60,4 +60,4 @@ jobs:
             docker container stop parlantos-guild-data-service
             docker rm parlantos-guild-data-service
             docker pull ${{ secrets.DOCKER_REPO }}:latest
-            docker run -d -p 8082:8082 --name parlantos-guild-data-service ${{ secrets.DOCKER_REPO }}:latest
+            docker run -d -p 8082:8082 --name parlantos-guild-data-service --restart unless-stopped ${{ secrets.DOCKER_REPO }}:latest
