@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.xml.bind.ValidationException;
 import java.util.List;
 
-@RequestMapping("/guild/discord/sync")
+@RequestMapping("/guild/data/discord/sync")
 @Controller
 public class DiscordSyncController {
 

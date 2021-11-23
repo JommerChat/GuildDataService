@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/guild")
+@RequestMapping("/guild/data")
 public class GuildController {
 
   private GuildMemberRepo guildMemberRepo;
