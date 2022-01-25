@@ -65,7 +65,7 @@ public class GuildController {
   }
 
   @GetMapping("/guilds")
-  public ResponseEntity<List<GuildEntity>> getAllGuildsForAMember(@RequestParam String memberId) throws ValidationException {
+  public ResponseEntity<List<BasicGuildInfo>> getAllGuildsForAMember(@RequestParam String memberId) throws ValidationException {
     return new ResponseEntity<>(this.guildService.getGuildsForMember(memberId), HttpStatus.OK);
   }
 

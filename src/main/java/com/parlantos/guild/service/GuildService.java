@@ -1,14 +1,17 @@
 package com.parlantos.guild.service;
 
 import com.parlantos.guild.dto.SnowflakeDto;
+import com.parlantos.guild.mappers.GuildMapper;
 import com.parlantos.guild.models.*;
 import com.parlantos.guild.models.entities.*;
 import com.parlantos.guild.repo.*;
+import net.bytebuddy.dynamic.scaffold.MethodGraph;
 import org.springframework.stereotype.Service;
 
 import javax.xml.bind.ValidationException;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -114,10 +117,17 @@ public class GuildService {
     return this.voiceChannelRepo.findAllByGuildEntity(guildEntity);
   }
 
-    public List<GuildEntity> getGuildsForMember(String memberId) throws ValidationException {
+    public List<BasicGuildInfo> getGuildsForMember(String memberId) throws ValidationException {
       MemberEntity memberEntity = this.memberRepo.findById(new BigInteger(memberId)).orElseThrow(() -> new ValidationException("The member id does not exist"));
       List<GuildMemberEntity> guildMemberEntity = this.guildMemberRepo.findAllByMemberEntity(memberEntity);
-      return guildMemberEntity.stream().map(GuildMemberEntity::getGuildEntity).collect(Collectors.toList());
+      List<GuildEntity> guildEntities =  guildMemberEntity.stream().map(GuildMemberEntity::getGuildEntity).collect(Collectors.toList());
+      List<List<VoiceChannelEntity>> voiceChannelEntities = new LinkedList<>();
+      List<List<TextChannelEntity>> textChannelEntities = new LinkedList<>();
+      for (var i : guildEntities) {
+        textChannelEntities.add(this.getTextChannelsInGuild(i.getId().toString()));
+        voiceChannelEntities.add(this.getVoiceChannelsInGuild(i.getId().toString()));
+      }
+      return GuildMapper.mapGuildsToBasicGuildInfo(guildEntities, textChannelEntities, voiceChannelEntities);
     }
 
   public List<GuildEntity> getTopPublicGuilds(String limit) {
