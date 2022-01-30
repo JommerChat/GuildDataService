@@ -133,4 +133,9 @@ public class GuildService {
   public List<GuildEntity> getTopPublicGuilds(String limit) {
     return this.guildRepo.findRecentMessagesWithLimit(new BigInteger(limit));
   }
+
+  public BigInteger fetchMemberIdByOktaId(String oktaId) {
+    MemberEntity memberEntity = this.memberRepo.findByOktaId(oktaId);
+    return memberEntity.getId();
+  }
 }

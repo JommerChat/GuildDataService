@@ -6,4 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.math.BigInteger;
 
 public interface MemberRepo extends CrudRepository<MemberEntity, BigInteger> {
+
+    MemberEntity findByOktaId(String oktaId);
 }

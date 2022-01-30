@@ -89,4 +89,9 @@ public class GuildController {
     return new ResponseEntity<>(this.guildService.createVoiceChannel(createVoiceChannelRequest), HttpStatus.OK);
   }
 
+  @GetMapping("/member")
+  public ResponseEntity<BigInteger> fetchMemberIdByOktaId(@RequestParam String oktaId) {
+    return new ResponseEntity<>(this.guildService.fetchMemberIdByOktaId(oktaId), HttpStatus.OK);
+  }
+
 }
