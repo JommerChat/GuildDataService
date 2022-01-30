@@ -24,6 +24,7 @@ public class GuildMapper {
             basicGuildInfo.setCurrentTextChannelIndex(0); // change this when storing access history is implemented
             basicGuildInfo.setTextChannelEntity(textChannels.get(currentIndex));
             basicGuildInfo.setVoiceChannelEntity(voiceChannels.get(currentIndex));
+            basicGuildInfos.add(basicGuildInfo);
             currentIndex++;
         }
         return basicGuildInfos;
